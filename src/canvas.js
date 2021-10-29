@@ -4,7 +4,12 @@ const draw = ()=>{
     var c2 = document.getElementById("myCanvas2");
     var ctx2 = c2.getContext("2d");
 
-    let img = document.getElementById("canvas_ref");
+    ctx.clearRect(0, 0, c.width, c.height);
+    ctx2.clearRect(0, 0, c2.width, c2.height);
+
+    let index = Math.floor(Math.random() * 520)
+    let img = new Image()
+    img.src = process.env.PUBLIC_URL+"/image/"+index+".png"
     
     ctx.drawImage(img, 0, 0);//canvas讀取圖片
     let imageData= ctx.getImageData(0,0,c.width, c.height);
