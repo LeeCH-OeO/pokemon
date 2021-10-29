@@ -15,9 +15,10 @@ function App() {
           ©LeeCH-OeO 
           </Typography></a>         
           </footer>
-      <canvas id="myCanvas" width="630" height="630"></canvas> 
+      <div id ="canvas_container" style={{"display":"none"}}><canvas id="myCanvas" width="630" height="630"></canvas> 
       <canvas id="myCanvas2" width="630" height="630"></canvas>
-      <canvas id="myCanvas3" width="630" height="630"></canvas>
+      <canvas id="myCanvas3" width="630" height="630"></canvas></div>
+      
       <Button variant="contained" onClick={draw} size="large">隨機轉換!</Button> 
       <div className="container">
       {pokemonImages}

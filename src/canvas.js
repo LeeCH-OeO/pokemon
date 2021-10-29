@@ -1,4 +1,6 @@
 const draw = ()=>{
+    let canvas_container = document.getElementById("canvas_container");
+    canvas_container.style.display=""
     let c = document.getElementById("myCanvas");
     let ctx = c.getContext("2d");
     let c2 = document.getElementById("myCanvas2");
