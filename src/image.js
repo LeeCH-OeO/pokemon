@@ -3,10 +3,10 @@ let imageArray=[]
 let i=0
 
 while(i<=519){
-    imageArray.push("/image/"+i+".png")
+    imageArray.push(process.env.PUBLIC_URL +"/image/"+i+".png")
     i++
 }
-
+console.log(imageArray)
 const pokemonImages = imageArray.map((imageArray)=>
     <div>
     <img  src={imageArray} alt="圖片"></img>    

@@ -4,8 +4,8 @@ const draw = ()=>{
     var c2 = document.getElementById("myCanvas2");
     var ctx2 = c2.getContext("2d");
 
-    let img = new Image()
-    img.src = "/image/5.png"
+    let img = document.getElementById("canvas_ref");
+    
     ctx.drawImage(img, 0, 0);//canvas讀取圖片
     let imageData= ctx.getImageData(0,0,c.width, c.height);
 
