@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import pokemonImages from './image';
+import {draw} from './canvas';
+import './App.css'
+import Typography from '@mui/material/Typography';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Typography className="header" variant="h3" gutterBottom style={{'font-family': 'Noto Serif TC','color':'red'}}>
+        寶可夢圖鑑
+        </Typography>
+      <div className="container">
+      {pokemonImages}
+      </div>
+      <button onClick={draw}>click</button>
+      <canvas id="myCanvas" width="600" height="600"></canvas>
+      <canvas id="myCanvas2" width="600" height="600"></canvas>
     </div>
+    
   );
 }
-
 export default App;
