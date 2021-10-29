@@ -11,12 +11,13 @@ function App() {
       <Typography className="header" variant="h3" gutterBottom style={{'font-family': 'Noto Serif TC','color':'red'}}>
         寶可夢圖鑑
         </Typography>
+      <button onClick={draw}>invert</button>
+      <canvas id="myCanvas" width="630" height="630"></canvas>
+      <canvas id="myCanvas2" width="630" height="630"></canvas>
       <div className="container">
       {pokemonImages}
       </div>
-      <button onClick={draw}>click</button>
-      <canvas id="myCanvas" width="600" height="600"></canvas>
-      <canvas id="myCanvas2" width="600" height="600"></canvas>
+      
     </div>
     
   );
