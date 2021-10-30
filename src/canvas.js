@@ -1,6 +1,6 @@
+
 const draw = ()=>{
-    let canvas_container = document.getElementById("canvas_container");
-    canvas_container.style.display=""
+  
     let c = document.getElementById("myCanvas");
     let ctx = c.getContext("2d");
     let c2 = document.getElementById("myCanvas2");
@@ -35,8 +35,13 @@ const draw = ()=>{
     }
       ctx2.putImageData(imageData, 0, 0);
       ctx3.putImageData(imageData2, 0, 0);
+    let oeo = document.getElementById("temp");
+    let oeo2 = document.getElementById("temp2");
+    oeo.src=c2.toDataURL("image/png")
+    oeo2.src=c3.toDataURL("image/png")
     
-
+    
 }
+  
 
-export { draw}
+export {draw}
