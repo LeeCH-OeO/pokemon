@@ -1,5 +1,5 @@
 # [目標是神奇寶貝大師!](https://leech-oeo.github.io/pokemon/)
-----
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
