@@ -35,8 +35,13 @@ const draw = ()=>{
     }
       ctx2.putImageData(imageData, 0, 0);
       ctx3.putImageData(imageData2, 0, 0);
+    let oeo0 = document.getElementById("temp0");
     let oeo = document.getElementById("temp");
     let oeo2 = document.getElementById("temp2");
+    oeo0.style.display=""
+    oeo.style.display=""
+    oeo2.style.display=""
+    oeo0.src = process.env.PUBLIC_URL+"/image/"+index+".png"
     oeo.src=c2.toDataURL("image/png")
     oeo2.src=c3.toDataURL("image/png")
     

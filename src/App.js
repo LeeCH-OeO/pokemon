@@ -17,14 +17,16 @@ function App() {
           ©LeeCH-OeO 
           </Typography></a>         
           </footer>
-      <img id="temp" alt = "123"></img>
-      <img id="temp2" alt = "123"></img>
+      <img id="temp0" alt = "123" style={{"display":"none"}}></img>
+      <img id="temp2" alt = "123" style={{"display":"none"}}></img>
+      <img id="temp" alt = "123" style={{"display":"none"}}></img>
+      <img id="temp2" alt = "123" style={{"display":"none"}}></img>
       <div id ="canvas_container" style={{"display":"none"}}>
       <canvas id="myCanvas" width="630" height="630"></canvas> 
       <canvas id="myCanvas2" width="630" height="630"></canvas>
       <canvas id="myCanvas3" width="630" height="630"></canvas>
       </div>
-      <Button onClick={draw}>123</Button>
+      <Button onClick={draw} variant="contained">隨機轉換!</Button>
       <div className="container">
       {pokemonImages}
       </div>
