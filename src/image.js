@@ -8,8 +8,7 @@ while(i<=519){
 const pokemonImages = imageArray.map((imageArray)=>
     <div>
     <img  src={imageArray} alt="圖片"></img>    
-    </div>
-     
+    </div>    
      
 )
 

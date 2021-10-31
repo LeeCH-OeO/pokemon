@@ -1,19 +1,82 @@
 import pokemonImages from './image';
-import {draw} from './canvas';
+import {draw} from './randomCanvas';
 import './App.css'
 import Typography from '@mui/material/Typography';
-import { Button } from '@mui/material';
+import { Button } from '@mui/material'
+import createInvert from './createInvert';
+import createGray from './createGray';
+import createThreshold from './createThreshold';
+import putInvertImage from './invertCanvas';
+import {putGrayImage} from './grayCanvas';
+import putThresholdImage from './putThresholdCanvas';
+import Swal from 'sweetalert2'
+const putSource = ()=>{
+  document.getElementById("status").innerHTML=""
+  document.getElementById("invertContainer").style.display="none"
+  document.getElementById("grayContainer").style.display="none"
+  document.getElementById("thresholdContainer").style.display="none"
+  document.getElementById("processedImageContainer").style.display="none"
+  document.getElementById("sourceContainer").style.display=""
+}
+const handleGray = ()=>{
+  Swal.fire({
+    text: "開始灰階轉換!",
+    icon: 'info',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: '開始',
+    cancelButtonText: '取消'
+    
+  }).then((result) => {
+    if (result.isConfirmed) {
+      setTimeout(()=>putGrayImage(), 500)
+    }
+  })
+}
 
+const handleInvert = ()=>{
+  Swal.fire({
+    text: "開始反轉轉換!",
+    icon: 'info',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: '開始',
+    cancelButtonText: '取消'
+    
+  }).then((result) => {
+    if (result.isConfirmed) {
+      setTimeout(()=>putInvertImage(), 500)
+    }
+  })
+}
+const handThreshold = ()=>{
+  Swal.fire({
+    text: "開始二值化轉換!",
+    icon: 'info',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: '開始',
+    cancelButtonText: '取消'
+    
+  }).then((result) => {
+    if (result.isConfirmed) {
+      setTimeout(()=>putThresholdImage(), 500)
+    }
+  })
+}
 function App() {
-  
+   
   return (
     <div>
-      <Typography className="header" variant="h3" gutterBottom style={{'font-family': 'Noto Serif TC','color':'red'}}>
+      <Typography className="header" variant="h3" gutterBottom style={{'fontfamily': 'Noto Serif TC','color':'red'}}>
         😀寶可夢圖鑑👍🏿
       </Typography>
       <div style={{"display": "flex"}}>
           <footer style={{ "margin": "auto"}}>
-            <a href="https://github.com/LeeCH-OeO/Weather-App" target="_blank" rel="noreferrer">
+            <a href="https://github.com/LeeCH-OeO/pokemon" target="_blank" rel="noreferrer">
             <Typography align="center" color="textSecondary" gutterBottom >
             ©LeeCH-OeO 
             </Typography></a>         
@@ -21,7 +84,13 @@ function App() {
       </div>
       <div style={{"display": "flex"}}>
         <Button onClick = {draw} style={{ "margin": "auto"}} variant="contained">隨機圖片特效</Button>
+        <Button onClick = {handleInvert} style={{ "margin": "auto"}} variant="contained">全體反轉</Button>
+        <Button onClick = {handleGray} style={{ "margin": "auto"}} variant="contained">全體灰階</Button>
+        <Button onClick = {handThreshold} style={{ "margin": "auto"}} variant="contained">全體二值化</Button>
+        <Button onClick = {putSource} style={{ "margin": "auto"}} variant="contained">關閉特效</Button>
+
       </div>  
+      <Typography variant="subtitle1" gutterBottom id = "status" style={{"textAlign": "center"}}></Typography>
       <span className = "processedImageContainer" style={{"display":"none"}} id = "processedImageContainer">
 
         <div>
@@ -58,11 +127,22 @@ function App() {
       <canvas id="grayCanvas" width="630" height="630"></canvas>
       <canvas id="invertCanavs" width="630" height="630"></canvas>
       <canvas id="thresholdCanvas" width="630" height="630"></canvas>
-      </div>      
-      <div className="container">
-      {pokemonImages}
       </div>
-
+      <div className="container" id = "sourceContainer">
+      {pokemonImages}      
+      </div>
+      <div className="container" id = "sourceContainer">
+      </div>
+      <div id = "invertContainer" className = "container" style={{"display":"none"}}>
+      {createInvert}
+      </div>
+      <div id = "grayContainer" className = "container" style={{"display":"none"}}>
+      {createGray}
+      </div>
+      <div id = "thresholdContainer" className = "container" style={{"display":"none"}}>
+      {createThreshold}
+      </div>
+      
       
     </div>
     
