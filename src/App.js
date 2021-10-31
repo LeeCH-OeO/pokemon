@@ -30,6 +30,8 @@ const handleGray = ()=>{
     
   }).then((result) => {
     if (result.isConfirmed) {
+      document.getElementById("loading").style.display="flex"
+      document.getElementById("status").style.display="none"
       setTimeout(()=>putGrayImage(), 500)
     }
   })
@@ -47,6 +49,8 @@ const handleInvert = ()=>{
     
   }).then((result) => {
     if (result.isConfirmed) {
+      document.getElementById("loading").style.display="flex"
+      document.getElementById("status").style.display="none"
       setTimeout(()=>putInvertImage(), 500)
     }
   })
@@ -63,6 +67,8 @@ const handThreshold = ()=>{
     
   }).then((result) => {
     if (result.isConfirmed) {
+      document.getElementById("loading").style.display="flex"
+      document.getElementById("status").style.display="none"
       setTimeout(()=>putThresholdImage(), 500)
     }
   })
@@ -70,6 +76,7 @@ const handThreshold = ()=>{
 const oeo = ()=>{
   setTimeout(()=>window.location.href="https://youtu.be/d-lEahV5Q_o", 500)
 }
+
 function App() {
    
   return (
@@ -93,7 +100,11 @@ function App() {
         <Button onClick = {oeo} style={{ "margin": "auto"}} variant="contained">🎙️👞</Button>
         <Button onClick = {putSource} style={{ "margin": "auto"}} variant="contained">關閉特效</Button>
 
-      </div>  
+      </div>
+      <div id = "loading" style={{"display":"none"}}>
+        <div className="lds-hourglass" style={{"margin": "auto"}}></div>
+      </div>
+      
       <Typography variant="subtitle1" gutterBottom id = "status" style={{"textAlign": "center"}}></Typography>
       <span className = "processedImageContainer" style={{"display":"none"}} id = "processedImageContainer">
 

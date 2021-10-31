@@ -28,12 +28,13 @@ const getInvert = ()=>{
             }
         ctxInvert.putImageData(invertImageData, 0, 0);
         imageURL.push(invertCanvas.toDataURL("image/png"))
-        console.log(`第${index}張圖片已轉換`) 
+         
         index+=1
-        
+        console.log(`第${index}張圖片已轉換`)
     }
 }
  const putInvertImage = ()=>{
+    
     document.getElementById("invertContainer").style=""
     document.getElementById("sourceContainer").style.display="none"
     document.getElementById("grayContainer").style.display="none"
@@ -46,14 +47,17 @@ const getInvert = ()=>{
         let tempImageID = document.getElementById("invertimg-"+count)
         tempImageID.src = imageURL[count]
         count+=1
+        console.log(`第${count}張圖片已載入`)
     }
     console.timeEnd("反轉顏色計時")
     let endTime = Date.now()
+    document.getElementById("status").style.display=""
     document.getElementById("status").innerHTML=`520張反轉處理耗時${endTime-startTime} ms, 平均耗時${(endTime-startTime)/520} ms`
     Swal.fire({
         icon: 'success',
         title: '反轉轉換完成!',        
-    })    
+    })
+    document.getElementById("loading").style.display="none"
 }
 
 export default putInvertImage

@@ -1,8 +1,25 @@
 import Swal from 'sweetalert2'
 let imageURL = []
 let index = 0
-const GetGray = ()=>{
+function temp(){
+
+  var elem = document.getElementById("myBar");   
+  var width = 0;
+  var id = setInterval(frame, 2);
+  function frame() {
+    if (width >= 500) {
+      clearInterval(id);
+    } else {
+      width+=0.08; 
+      elem.style.width = width + '%'; 
+    }
+  }
+
+}
+function GetGray (){
+       
     while (index<=519){
+    
     let sourceCanvas = document.createElement("canvas")
     sourceCanvas.id = "sourceCanvasAll"
     sourceCanvas.width = sourceCanvas.height = 630
@@ -27,10 +44,11 @@ const GetGray = ()=>{
         }
         ctxGray.putImageData(grayImageData, 0, 0);
         imageURL.push(grayCanvas.toDataURL("image/png"))
-        index+=1
-        console.log(`第${index}張圖片已轉換`) 
-        
+        index+=1        
+        console.log(`第${index}張圖片已轉換`)
     }
+     
+   
 }
  const putGrayImage = ()=>{
     document.getElementById("status").innerHTML=""
@@ -46,16 +64,18 @@ const GetGray = ()=>{
         let tempImageID = document.getElementById("grayimg-"+count)
         tempImageID.src = imageURL[count]
         count+=1
-        
+        console.log(`第${count}張圖片已載入`)
     }
     console.timeEnd("灰階計時")
     let endTime = Date.now()
+    document.getElementById("status").style.display=""
     document.getElementById("status").innerHTML=`520張灰階處理耗時${endTime-startTime} ms, 平均耗時${(endTime-startTime)/520} ms`
     Swal.fire({
         icon: 'success',
         title: '灰階轉換完成!',        
     })
+    document.getElementById("loading").style.display="none"
+    
     
 }
-
-export  {putGrayImage}
+export  {putGrayImage, temp}
