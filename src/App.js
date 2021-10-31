@@ -68,7 +68,7 @@ const handThreshold = ()=>{
   })
 }
 const oeo = ()=>{
-  setTimeout(()=>window.location.href="https://youtu.be/dQw4w9WgXcQ", 500)
+  setTimeout(()=>window.location.href="https://youtu.be/d-lEahV5Q_o", 500)
 }
 function App() {
    
