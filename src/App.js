@@ -20,8 +20,8 @@ const putSource = ()=>{
 }
 const handleGray = ()=>{
   Swal.fire({
-    text: "開始灰階轉換!",
-    icon: 'info',
+    text: "開始灰階轉換",
+    icon: 'question',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
@@ -37,8 +37,8 @@ const handleGray = ()=>{
 
 const handleInvert = ()=>{
   Swal.fire({
-    text: "開始反轉轉換!",
-    icon: 'info',
+    text: "開始反轉轉換",
+    icon: 'question',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
@@ -53,8 +53,8 @@ const handleInvert = ()=>{
 }
 const handThreshold = ()=>{
   Swal.fire({
-    text: "開始二值化轉換!",
-    icon: 'info',
+    text: "開始二值化轉換",
+    icon: 'question',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
