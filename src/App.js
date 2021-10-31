@@ -67,6 +67,9 @@ const handThreshold = ()=>{
     }
   })
 }
+const oeo = ()=>{
+  setTimeout(()=>window.location.href="https://youtu.be/dQw4w9WgXcQ", 500)
+}
 function App() {
    
   return (
@@ -87,6 +90,7 @@ function App() {
         <Button onClick = {handleInvert} style={{ "margin": "auto"}} variant="contained">全體反轉</Button>
         <Button onClick = {handleGray} style={{ "margin": "auto"}} variant="contained">全體灰階</Button>
         <Button onClick = {handThreshold} style={{ "margin": "auto"}} variant="contained">全體二值化</Button>
+        <Button onClick = {oeo} style={{ "margin": "auto"}} variant="contained">🎙️👞</Button>
         <Button onClick = {putSource} style={{ "margin": "auto"}} variant="contained">關閉特效</Button>
 
       </div>  
