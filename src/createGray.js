@@ -7,7 +7,7 @@ while(i<=519){
 }
 const createGray = tempArray.map((tempArray)=>
     <div>
-    <img  id={tempArray} alt="圖片"></img>    
+    <img  id={tempArray} alt="圖片" ></img>    
     </div>    
      
 )

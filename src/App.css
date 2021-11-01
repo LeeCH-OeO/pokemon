@@ -1,25 +1,32 @@
+html, body, #root {
+  background-color: #121212;
+  color: white;
+}
+
+
 .container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 10px;
+    grid-gap: 5px;
     align-items: stretch;
     
 }
 .container img{
     border: 1px solid #ccc;
-    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    border-radius: 10px;
     max-width: 100%;
 }
 .processedImageContainer{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    grid-gap: 10px;
+    grid-gap: 5px;
     align-items: center;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
     padding: 10px;
 }
 .processedImageContainer img{
     border: 1px solid #ccc;
+    border-radius: 10px;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
     max-width: 100%;
 }
@@ -43,9 +50,9 @@
   height: 0;
   margin: 8px;
   box-sizing: border-box;
-  border: 32px solid #cef;
-  border-color: #cef transparent #cef transparent;
-  animation: lds-hourglass 1.2s infinite;
+  border: 32px solid red;
+  border-color: red transparent red transparent;
+  animation: lds-hourglass 1.0s infinite;
 }
 @keyframes lds-hourglass {
   0% {
@@ -60,3 +67,4 @@
     transform: rotate(1800deg);
   }
 }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&display=swap');

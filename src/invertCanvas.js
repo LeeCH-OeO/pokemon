@@ -55,7 +55,8 @@ const getInvert = ()=>{
     document.getElementById("status").innerHTML=`520張反轉處理耗時${endTime-startTime} ms, 平均耗時${(endTime-startTime)/520} ms`
     Swal.fire({
         icon: 'success',
-        title: '反轉轉換完成!',        
+        title: '反轉轉換完成!',
+        background:'#121212'        
     })
     document.getElementById("loading").style.display="none"
     document.getElementById("loadingText").style.display="none"
