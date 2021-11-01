@@ -126,7 +126,7 @@ function App() {
         <Button onClick = {handleInvert} style={{ "margin": "auto"}} variant="outlined" color="error">全體反轉</Button>
         <Button onClick = {handleGray} style={{ "margin": "auto"}} variant="outlined" color="error">全體灰階</Button>
         <Button onClick = {handThreshold} style={{ "margin": "auto"}} variant="outlined" color="error">全體二值化</Button>
-        <Button onClick = {oeo} style={{ "margin": "auto"}} variant="outlined" color="error">我是誰???</Button>
+        <Button onClick = {oeo} style={{ "margin": "auto"}} variant="outlined" color="error">🎵🎶🎙️🎼</Button>
         <Button onClick = {putSource} style={{ "margin": "auto"}} variant="outlined" color="error">關閉特效</Button>
 
       </div>
