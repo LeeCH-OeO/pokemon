@@ -100,7 +100,10 @@ const oeo = ()=>{
   document.getElementById("grayContainer").style.display="none"
   document.getElementById("sourceContainer").style.display="none"
   document.getElementById("thresholdContainer").style.display="none"
-  setTimeout(()=>window.location.href="https://youtu.be/d-lEahV5Q_o", 3000)
+  setTimeout(()=>window.open("https://youtu.be/d-lEahV5Q_o"), 3000)
+  setTimeout(()=>document.getElementById("sourceContainer").style.display="", 3000)
+  setTimeout(()=>document.getElementById("loading").style.display="none", 3000)
+  setTimeout(()=>document.getElementById("loadingText").style.display="none", 3000)
 }
 
 function App() {
