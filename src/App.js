@@ -143,17 +143,18 @@ function App() {
         </Typography>
         </div>
         <div>
-          <img id="grayImage" alt = "123" ></img>
-          <Typography className="describe" variant="subtitle1" gutterBottom >
-          灰階
-        </Typography>
-        </div>
-        <div>
           <img id="invertImage" alt = "123" ></img>
           <Typography className="describe" variant="subtitle1" gutterBottom >
           反轉
         </Typography>
         </div>
+        <div>
+          <img id="grayImage" alt = "123" ></img>
+          <Typography className="describe" variant="subtitle1" gutterBottom >
+          灰階
+        </Typography>
+        </div>
+        
         <div>
         <img id="thresholdImage" alt = "123"></img>
         <Typography className="describe" variant="subtitle1" gutterBottom >
