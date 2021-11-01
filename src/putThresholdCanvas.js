@@ -57,7 +57,8 @@ const getThreshold= ()=>{
         icon: 'success',
         title: '二值化轉換完成!',        
     })
-    document.getElementById("loading").style.display="none"    
+    document.getElementById("loading").style.display="none"
+    document.getElementById("loadingText").style.display="none" 
 }
 
 export default putThresholdImage

@@ -58,6 +58,7 @@ const getInvert = ()=>{
         title: '反轉轉換完成!',        
     })
     document.getElementById("loading").style.display="none"
+    document.getElementById("loadingText").style.display="none"
 }
 
 export default putInvertImage

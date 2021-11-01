@@ -75,6 +75,7 @@ function GetGray (){
         title: '灰階轉換完成!',        
     })
     document.getElementById("loading").style.display="none"
+    document.getElementById("loadingText").style.display="none"
     
     
 }

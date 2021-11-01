@@ -31,6 +31,7 @@ const handleGray = ()=>{
   }).then((result) => {
     if (result.isConfirmed) {
       document.getElementById("loading").style.display="flex"
+      document.getElementById("loadingText").style.display="flex"
       document.getElementById("status").style.display="none"
       document.getElementById("processedImageContainer").style.display="none"
       document.getElementById("invertContainer").style.display="none"
@@ -54,6 +55,7 @@ const handleInvert = ()=>{
   }).then((result) => {
     if (result.isConfirmed) {
       document.getElementById("loading").style.display="flex"
+      document.getElementById("loadingText").style.display="flex"
       document.getElementById("status").style.display="none"
       document.getElementById("processedImageContainer").style.display="none"
       document.getElementById("grayContainer").style.display="none"
@@ -76,6 +78,7 @@ const handThreshold = ()=>{
   }).then((result) => {
     if (result.isConfirmed) {
       document.getElementById("loading").style.display="flex"
+      document.getElementById("loadingText").style.display="flex"
       document.getElementById("status").style.display="none"
       document.getElementById("processedImageContainer").style.display="none"
       document.getElementById("invertContainer").style.display="none"
@@ -87,6 +90,7 @@ const handThreshold = ()=>{
 }
 const oeo = ()=>{
   document.getElementById("loading").style.display="flex"
+  document.getElementById("loadingText").style.display="flex"
   document.getElementById("status").style.display="none"
   document.getElementById("processedImageContainer").style.display="none"
   document.getElementById("invertContainer").style.display="none"
@@ -100,7 +104,7 @@ function App() {
    
   return (
     <div>
-      <Typography className="header" variant="h3" gutterBottom style={{'fontfamily': 'Noto Serif TC','color':'red'}}>
+      <Typography className="header" variant="h1" gutterBottom style={{'fontfamily': 'Noto Serif TC','color':'red'}}>
         😀寶可夢圖鑑👍🏿
       </Typography>
       <div style={{"display": "flex"}}>
@@ -123,7 +127,9 @@ function App() {
       <div id = "loading" style={{"display":"none"}}>
         <div className="lds-hourglass" style={{"margin": "auto"}}></div>
       </div>
-      
+      <div id = "loadingText" style={{"display":"none"}}>
+        <Typography variant="h3" gutterBottom style={{"margin": "auto"}}>Now Loading</Typography>
+      </div>      
       <Typography variant="subtitle1" gutterBottom id = "status" style={{"textAlign": "center"}}></Typography>
       <span className = "processedImageContainer" style={{"display":"none"}} id = "processedImageContainer">
 
