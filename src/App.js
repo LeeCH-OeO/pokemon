@@ -32,6 +32,10 @@ const handleGray = ()=>{
     if (result.isConfirmed) {
       document.getElementById("loading").style.display="flex"
       document.getElementById("status").style.display="none"
+      document.getElementById("processedImageContainer").style.display="none"
+      document.getElementById("invertContainer").style.display="none"
+      document.getElementById("thresholdContainer").style.display="none"
+      document.getElementById("sourceContainer").style.display="none"
       setTimeout(()=>putGrayImage(), 500)
     }
   })
@@ -51,6 +55,10 @@ const handleInvert = ()=>{
     if (result.isConfirmed) {
       document.getElementById("loading").style.display="flex"
       document.getElementById("status").style.display="none"
+      document.getElementById("processedImageContainer").style.display="none"
+      document.getElementById("grayContainer").style.display="none"
+      document.getElementById("thresholdContainer").style.display="none"
+      document.getElementById("sourceContainer").style.display="none"
       setTimeout(()=>putInvertImage(), 500)
     }
   })
@@ -69,12 +77,23 @@ const handThreshold = ()=>{
     if (result.isConfirmed) {
       document.getElementById("loading").style.display="flex"
       document.getElementById("status").style.display="none"
+      document.getElementById("processedImageContainer").style.display="none"
+      document.getElementById("invertContainer").style.display="none"
+      document.getElementById("grayContainer").style.display="none"
+      document.getElementById("sourceContainer").style.display="none"
       setTimeout(()=>putThresholdImage(), 500)
     }
   })
 }
 const oeo = ()=>{
-  setTimeout(()=>window.location.href="https://youtu.be/d-lEahV5Q_o", 500)
+  document.getElementById("loading").style.display="flex"
+  document.getElementById("status").style.display="none"
+  document.getElementById("processedImageContainer").style.display="none"
+  document.getElementById("invertContainer").style.display="none"
+  document.getElementById("grayContainer").style.display="none"
+  document.getElementById("sourceContainer").style.display="none"
+  document.getElementById("thresholdContainer").style.display="none"
+  setTimeout(()=>window.location.href="https://youtu.be/d-lEahV5Q_o", 3000)
 }
 
 function App() {
@@ -146,8 +165,7 @@ function App() {
       <div className="container" id = "sourceContainer">
       {pokemonImages}      
       </div>
-      <div className="container" id = "sourceContainer">
-      </div>
+      
       <div id = "invertContainer" className = "container" style={{"display":"none"}}>
       {createInvert}
       </div>
