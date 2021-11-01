@@ -100,18 +100,19 @@ const oeo = ()=>{
   document.getElementById("grayContainer").style.display="none"
   document.getElementById("sourceContainer").style.display="none"
   document.getElementById("thresholdContainer").style.display="none"
+  setTimeout(()=>document.getElementById("loading").style.display="none", 2900)
+  setTimeout(()=>document.getElementById("loadingText").style.display="none", 2900)
   setTimeout(()=>window.open("https://youtu.be/d-lEahV5Q_o"), 3000)
   setTimeout(()=>document.getElementById("sourceContainer").style.display="", 3000)
-  setTimeout(()=>document.getElementById("loading").style.display="none", 3000)
-  setTimeout(()=>document.getElementById("loadingText").style.display="none", 3000)
+  
 }
 
 function App() {
    
   return (
     <div>
-      <Typography className="header" variant="h2" gutterBottom style={{'font-family': 'Noto Serif TC','color':'red'}}>
-        😀寶可夢圖鑑👍🏿
+      <Typography className="header" variant="h1" gutterBottom style={{'font-family': 'Noto Serif TC','color':'red'}}>
+      ㊕寶可夢圖鑑㊝
       </Typography>
       <div style={{"display": "flex"}}>
           <footer style={{ "margin": "auto"}}>
@@ -121,7 +122,7 @@ function App() {
             </Typography></a>         
           </footer>
       </div>
-      <div style={{"display": "flex"}}>
+      <div style={{"display": "flex", "padding":"10px"}}>
         <Button onClick = {draw} style={{ "margin": "auto"}} variant="outlined" color="error">隨機圖片特效</Button>
         <Button onClick = {handleInvert} style={{ "margin": "auto"}} variant="outlined" color="error">全體反轉</Button>
         <Button onClick = {handleGray} style={{ "margin": "auto"}} variant="outlined" color="error">全體灰階</Button>
@@ -136,7 +137,7 @@ function App() {
       <div id = "loadingText" style={{"display":"none"}}>
         <Typography variant="h5" gutterBottom style={{"margin": "auto", 'font-family': 'Noto Serif TC','color':'red'}}>Now Loading</Typography>
       </div>      
-      <Typography variant="subtitle1" gutterBottom id = "status" style={{"textAlign": "center", 'font-family': 'Noto Serif TC','color':'red'}}></Typography>
+      <Typography variant="h4" gutterBottom id = "status" style={{"textAlign": "center", 'font-family': 'Noto Serif TC','color':'red'}}></Typography>
       <span className = "processedImageContainer" style={{"display":"none"}} id = "processedImageContainer">
 
         <div>
