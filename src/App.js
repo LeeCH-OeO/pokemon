@@ -137,7 +137,7 @@ function App() {
       <div id = "loadingText" style={{"display":"none"}}>
         <Typography variant="h5" gutterBottom style={{"margin": "auto", 'font-family': 'Noto Serif TC','color':'red'}}>Now Loading</Typography>
       </div>      
-      <Typography variant="h4" gutterBottom id = "status" style={{"textAlign": "center", 'font-family': 'Noto Serif TC','color':'red'}}></Typography>
+      
       <span className = "processedImageContainer" style={{"display":"none"}} id = "processedImageContainer">
 
         <div>
@@ -168,7 +168,7 @@ function App() {
       
       
       </span>
-      
+      <Typography variant="h4" gutterBottom id = "status" style={{"textAlign": "center", 'font-family': 'Noto Serif TC','color':'red'}}></Typography>
             
       <div id ="canvas_container" style={{"display":"none"}}>
       <canvas id="sourceCanvas" width="630" height="630"></canvas> 
