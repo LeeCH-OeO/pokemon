@@ -112,7 +112,7 @@ function App() {
   return (
     <div>
       <Typography className="header" variant="h1" gutterBottom style={{'font-family': 'Noto Serif TC','color':'red'}}>
-      ㊕寶可夢圖鑑㊝
+      ㊕寶可夢特效圖鑑㊝
       </Typography>
       <div style={{"display": "flex"}}>
           <footer style={{ "margin": "auto"}}>
