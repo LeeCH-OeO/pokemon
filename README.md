@@ -1,4 +1,4 @@
-# [目標是神奇寶貝大師!](https://leech-oeo.github.io/pokemon/)
+# [👉🏿酷酷的寶可夢特效圖鑑👈🏿](https://leech-oeo.github.io/pokemon/)
 
 ## Getting Started with Create React App
 
