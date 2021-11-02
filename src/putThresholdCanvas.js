@@ -3,31 +3,31 @@ let imageURL = []
 let index = 0
 const getThreshold= ()=>{
     while (index<=519){
-    let sourceCanvas = document.createElement("canvas")
-    sourceCanvas.id = "sourceCanvasAll"
-    sourceCanvas.width = sourceCanvas.height = 630
-    let ctxSource = sourceCanvas.getContext("2d");
+        let sourceCanvas = document.createElement("canvas")
+        sourceCanvas.id = "sourceCanvasAll"
+        sourceCanvas.width = sourceCanvas.height = 630
+        let ctxSource = sourceCanvas.getContext("2d");
 
-    let thresholdCanvas = document.createElement("canvas")
-    thresholdCanvas.id = "thresholdCanvasAll"
-    thresholdCanvas.width = thresholdCanvas.height = 630
-    let ctxThreshold = thresholdCanvas.getContext("2d");
+        let thresholdCanvas = document.createElement("canvas")
+        thresholdCanvas.id = "thresholdCanvasAll"
+        thresholdCanvas.width = thresholdCanvas.height = 630
+        let ctxThreshold = thresholdCanvas.getContext("2d");
 
-    ctxSource.clearRect(0, 0, sourceCanvas.width, sourceCanvas.height);
-    ctxThreshold.clearRect(0, 0, thresholdCanvas.width, thresholdCanvas.height);
+        ctxSource.clearRect(0, 0, sourceCanvas.width, sourceCanvas.height);
+        ctxThreshold.clearRect(0, 0, thresholdCanvas.width, thresholdCanvas.height);
         let img = new Image()
         img.src = process.env.PUBLIC_URL+"/image/"+index+".png"
         ctxSource.drawImage(img, 0, 0)
         let thresholdImageData= ctxSource.getImageData(0,0,sourceCanvas.width, sourceCanvas.height);
         for(let i = 0; i < thresholdImageData.data.length; i += 4){
-            let result = (thresholdImageData.data[i]*0.2126 + thresholdImageData.data[i +1]*0.7152 + thresholdImageData.data[i +2]*0.0722 >=200) ? 255:0//閥值=200
+            let result = (thresholdImageData.data[i]*0.2126 + thresholdImageData.data[i +1]*0.7152 + thresholdImageData.data[i +2]*0.0722 >=200) ? 255:0 
+            //先灰階處理 再比對閥值
             thresholdImageData.data[i] = result
             thresholdImageData.data[i+1] = result
             thresholdImageData.data[i+2] = result
-          }
+        }
         ctxThreshold.putImageData(thresholdImageData, 0, 0);
         imageURL.push(thresholdCanvas.toDataURL("image/png"))
-         
         index+=1
         console.log(`第${index}張圖片已轉換`)
     }
