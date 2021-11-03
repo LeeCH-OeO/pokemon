@@ -137,7 +137,6 @@ function App() {
       <div id = "loadingText" style={{"display":"none"}}>
         <Typography variant="h5" gutterBottom style={{"margin": "auto", 'fontFamily': 'Noto Serif TC','color':'red'}} >Loading</Typography>
       </div>      
-      
       <span className = "processedImageContainer" style={{"display":"none"}} id = "processedImageContainer">
 
         <div>

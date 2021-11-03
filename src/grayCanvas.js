@@ -1,21 +1,17 @@
 import Swal from 'sweetalert2'
+
 let imageURL = []
 let index = 1
-
 function GetGray (){
-       
     while (index<=520){
-    
       let sourceCanvas = document.createElement("canvas")
       sourceCanvas.id = "sourceCanvasAll"
       sourceCanvas.width = sourceCanvas.height = 630
       let ctxSource = sourceCanvas.getContext("2d");
-
       let grayCanvas = document.createElement("canvas")
       grayCanvas.id = "grayCanvasAll"
       grayCanvas.width = grayCanvas.height = 630
       let ctxGray = grayCanvas.getContext("2d");
-
       ctxSource.clearRect(0, 0, sourceCanvas.width, sourceCanvas.height);
       ctxGray.clearRect(0, 0, grayCanvas.width, grayCanvas.height);
       let img = new Image()
@@ -30,12 +26,9 @@ function GetGray (){
       }
       ctxGray.putImageData(grayImageData, 0, 0);
       imageURL.push(grayCanvas.toDataURL("image/png"))
-      console.log(`${index/520}`)
-     
+      console.log(`第${index}張圖片已轉換`)
       index+=1  
-    }
-     
-   
+    } 
 }
 
  const putGrayImage = ()=>{
@@ -64,8 +57,7 @@ function GetGray (){
         background:'#121212'       
     })
     document.getElementById("loading").style.display="none"
-    document.getElementById("loadingText").style.display="none"
-    
+    document.getElementById("loadingText").style.display="none" 
     
 }
 
