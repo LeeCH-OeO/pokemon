@@ -1,7 +1,7 @@
 let tempArray=[]
-let i=0
+let i=1
 
-while(i<=519){
+while(i<=520){
     tempArray.push("invertimg-"+i)
     i++
 }

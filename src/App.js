@@ -111,13 +111,13 @@ function App() {
    
   return (
     <div>
-      <Typography className="header" variant="h1" gutterBottom style={{'font-family': 'Noto Serif TC','color':'red'}}>
+      <Typography className="header" variant="h1" gutterBottom style={{'fontFamily': 'Noto Serif TC','color':'red'}}>
       ㊕寶可夢特效圖鑑㊝
       </Typography>
       <div style={{"display": "flex"}}>
           <footer style={{ "margin": "auto"}}>
             <a href="https://github.com/LeeCH-OeO/pokemon" target="_blank" rel="noreferrer">
-            <Typography align="center"  gutterBottom style={{'font-family': 'Noto Serif TC','color':'red'}}>
+            <Typography align="center"  gutterBottom style={{'fontFamily': 'Noto Serif TC','color':'red'}}>
             ©LeeCH-OeO 
             </Typography></a>         
           </footer>
@@ -135,7 +135,7 @@ function App() {
         <div className="lds-hourglass" style={{"margin": "auto"}}></div>
       </div>
       <div id = "loadingText" style={{"display":"none"}}>
-        <Typography variant="h5" gutterBottom style={{"margin": "auto", 'font-family': 'Noto Serif TC','color':'red'}}>Now Loading</Typography>
+        <Typography variant="h5" gutterBottom style={{"margin": "auto", 'fontFamily': 'Noto Serif TC','color':'red'}} >Loading</Typography>
       </div>      
       
       <span className = "processedImageContainer" style={{"display":"none"}} id = "processedImageContainer">
@@ -168,7 +168,7 @@ function App() {
       
       
       </span>
-      <Typography variant="h4" gutterBottom id = "status" style={{"textAlign": "center", 'font-family': 'Noto Serif TC','color':'red'}}></Typography>
+      <Typography variant="h4" gutterBottom id = "status" style={{"textAlign": "center", 'fontFamily': 'Noto Serif TC','color':'red'}}></Typography>
             
       <div id ="canvas_container" style={{"display":"none"}}>
       <canvas id="sourceCanvas" width="630" height="630"></canvas> 

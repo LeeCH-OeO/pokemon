@@ -1,8 +1,8 @@
 import Swal from 'sweetalert2'
 let imageURL = []
-let index = 0
+let index = 1
 const getInvert = ()=>{
-    while (index<=519){
+    while (index<=520){
         let sourceCanvas = document.createElement("canvas")
         sourceCanvas.id = "sourceCanvasAll"
         sourceCanvas.width = sourceCanvas.height = 630
@@ -26,9 +26,9 @@ const getInvert = ()=>{
             invertImageData.data[i + 3] =255
         }
         ctxInvert.putImageData(invertImageData, 0, 0);
-        imageURL.push(invertCanvas.toDataURL("image/png"))
-        index+=1
+        imageURL.push(invertCanvas.toDataURL("image/png"))        
         console.log(`第${index}張圖片已轉換`)
+        index++
         }
 }
  const putInvertImage = ()=>{
@@ -40,12 +40,12 @@ const getInvert = ()=>{
     let startTime = Date.now()
     console.time("反轉顏色計時")
     getInvert()
-    let count = 0
-    while(count<=519){
+    let count = 1
+    while(count<=520){
         let tempImageID = document.getElementById("invertimg-"+count)
-        tempImageID.src = imageURL[count]
-        count+=1
+        tempImageID.src = imageURL[count-1]        
         console.log(`第${count}張圖片已載入`)
+        count++
     }
     console.timeEnd("反轉顏色計時")
     let endTime = Date.now()

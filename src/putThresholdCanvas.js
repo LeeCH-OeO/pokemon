@@ -1,8 +1,8 @@
 import Swal from 'sweetalert2'
 let imageURL = []
-let index = 0
+let index = 1
 const getThreshold= ()=>{
-    while (index<=519){
+    while (index<=520){
         let sourceCanvas = document.createElement("canvas")
         sourceCanvas.id = "sourceCanvasAll"
         sourceCanvas.width = sourceCanvas.height = 630
@@ -27,9 +27,9 @@ const getThreshold= ()=>{
             thresholdImageData.data[i+2] = result
         }
         ctxThreshold.putImageData(thresholdImageData, 0, 0);
-        imageURL.push(thresholdCanvas.toDataURL("image/png"))
-        index+=1
+        imageURL.push(thresholdCanvas.toDataURL("image/png"))        
         console.log(`第${index}張圖片已轉換`)
+        index+=1
     }
 }
  const putThresholdImage = ()=>{
@@ -42,12 +42,12 @@ const getThreshold= ()=>{
     let startTime = Date.now()
     document.getElementById("status").innerHTML="開始二值化處理"
     getThreshold()
-    let count = 0
-    while(count<=519){
+    let count = 1
+    while(count<=520){
         let tempImageID = document.getElementById("thresholdimg-"+count)
-        tempImageID.src = imageURL[count]
-        count+=1
+        tempImageID.src = imageURL[count-1]        
         console.log(`第${count}張圖片已載入`)
+        count+=1
     }
     console.timeEnd("二值計時")
     let endTime = Date.now()

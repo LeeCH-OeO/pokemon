@@ -1,24 +1,10 @@
 import Swal from 'sweetalert2'
 let imageURL = []
-let index = 0
-function temp(){
+let index = 1
 
-  var elem = document.getElementById("myBar");   
-  var width = 0;
-  var id = setInterval(frame, 2);
-  function frame() {
-    if (width >= 500) {
-      clearInterval(id);
-    } else {
-      width+=0.08; 
-      elem.style.width = width + '%'; 
-    }
-  }
-
-}
 function GetGray (){
        
-    while (index<=519){
+    while (index<=520){
     
       let sourceCanvas = document.createElement("canvas")
       sourceCanvas.id = "sourceCanvasAll"
@@ -44,8 +30,9 @@ function GetGray (){
       }
       ctxGray.putImageData(grayImageData, 0, 0);
       imageURL.push(grayCanvas.toDataURL("image/png"))
-      index+=1        
-      console.log(`第${index}張圖片已轉換`)  
+      console.log(`${index/520}`)
+     
+      index+=1  
     }
      
    
@@ -60,13 +47,12 @@ function GetGray (){
     console.time("灰階計時")
     let startTime = Date.now()
     GetGray()
-    let count = 0
-    while(count<=519){
+    let count = 1
+    while(count<=520){
         let tempImageID = document.getElementById("grayimg-"+count)
-        tempImageID.src = imageURL[count]
-        
-        count+=1
+        tempImageID.src = imageURL[count-1]        
         console.log(`第${count}張圖片已載入`)
+        count+=1
     }
     console.timeEnd("灰階計時")
     let endTime = Date.now()
@@ -82,4 +68,5 @@ function GetGray (){
     
     
 }
-export  {putGrayImage, temp}
+
+export  {putGrayImage}
