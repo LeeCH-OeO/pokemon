@@ -1,4 +1,4 @@
-import pokemonImages from './image';
+import {imageArray} from './image';
 import {draw} from './randomCanvas';
 import './App.css'
 import Typography from '@mui/material/Typography';
@@ -176,7 +176,8 @@ function App() {
       <canvas id="thresholdCanvas" width="630" height="630"></canvas>
       </div>
       <div className="container" id = "sourceContainer">
-      {pokemonImages}      
+      {imageArray}
+ 
       </div>
       
       <div id = "invertContainer" className = "container" style={{"display":"none"}}>
