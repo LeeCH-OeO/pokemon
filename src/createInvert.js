@@ -1,14 +1,14 @@
-let tempArray=[]
+import allName from './allName'
+import Typography from '@mui/material/Typography';
+
+let invertArray=[]
 let i=1
 
 while(i<=520){
-    tempArray.push("invertimg-"+i)
+    invertArray.push(<div>
+    <img  id={"invertimg-"+i} alt="圖片"></img>
+    <Typography variant="h5" gutterBottom style={{'fontFamily': 'Noto Serif TC', 'textAlign': 'center'}}>{allName[i-1]}</Typography>
+    </div>)
     i++
 }
-const createInvert = tempArray.map((tempArray)=>
-    <div>
-    <img  id={tempArray} alt="圖片"></img>    
-    </div>    
-     
-)
-export default createInvert
+export default invertArray

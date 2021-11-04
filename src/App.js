@@ -3,9 +3,9 @@ import {draw} from './randomCanvas';
 import './App.css'
 import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material'
-import createInvert from './createInvert';
-import createGray from './createGray';
-import createThreshold from './createThreshold';
+import invertArray from './createInvert';
+import grayArray from './createGray';
+import thresholdArray from './createThreshold';
 import putInvertImage from './invertCanvas';
 import {putGrayImage} from './grayCanvas';
 import putThresholdImage from './putThresholdCanvas';
@@ -141,26 +141,26 @@ function App() {
 
         <div>
         <img id="sourceImage" alt = "123" ></img>
-        <Typography className="describe" variant="subtitle1" gutterBottom >
+        <Typography className="describe" variant="subtitle1" gutterBottom style={{'fontFamily': 'Noto Serif TC', 'textAlign': 'center'}} >
           原始
         </Typography>
         </div>
         <div>
           <img id="invertImage" alt = "123" ></img>
-          <Typography className="describe" variant="subtitle1" gutterBottom >
+          <Typography className="describe" variant="subtitle1" gutterBottom style={{'fontFamily': 'Noto Serif TC', 'textAlign': 'center'}} >
           反轉
         </Typography>
         </div>
         <div>
           <img id="grayImage" alt = "123" ></img>
-          <Typography className="describe" variant="subtitle1" gutterBottom >
+          <Typography className="describe" variant="subtitle1" gutterBottom style={{'fontFamily': 'Noto Serif TC', 'textAlign': 'center'}} >
           灰階
         </Typography>
         </div>
         
         <div>
         <img id="thresholdImage" alt = "123"></img>
-        <Typography className="describe" variant="subtitle1" gutterBottom >
+        <Typography className="describe" variant="subtitle1" gutterBottom style={{'fontFamily': 'Noto Serif TC', 'textAlign': 'center'}} >
           二值化
         </Typography> 
         </div>            
@@ -181,13 +181,13 @@ function App() {
       </div>
       
       <div id = "invertContainer" className = "container" style={{"display":"none"}}>
-      {createInvert}
+      {invertArray}
       </div>
       <div id = "grayContainer" className = "container" style={{"display":"none"}}>
-      {createGray}
+      {grayArray}
       </div>
       <div id = "thresholdContainer" className = "container" style={{"display":"none"}}>
-      {createThreshold}
+      {thresholdArray}
       </div>
       
       
