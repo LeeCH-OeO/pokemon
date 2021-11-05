@@ -19,10 +19,13 @@ function GetGray (){
       ctxSource.drawImage(img, 0, 0)
       let grayImageData= ctxSource.getImageData(0,0,sourceCanvas.width, sourceCanvas.height);
       for (let i = 0; i < grayImageData.data.length; i += 4){
-        let avg = (grayImageData.data[i]*0.2126 + grayImageData.data[i +1]*0.7152 + grayImageData.data[i +2]*0.0722)
-        grayImageData.data[i] = avg
-        grayImageData.data[i+1] = avg
-        grayImageData.data[i+2] = avg
+        if(grayImageData.data[i+3]!==0){
+          let avg = (grayImageData.data[i]*0.2126 + grayImageData.data[i +1]*0.7152 + grayImageData.data[i +2]*0.0722)
+          grayImageData.data[i] = avg
+          grayImageData.data[i+1] = avg
+          grayImageData.data[i+2] = avg
+        }
+        
       }
       ctxGray.putImageData(grayImageData, 0, 0);
       imageURL.push(grayCanvas.toDataURL("image/png"))

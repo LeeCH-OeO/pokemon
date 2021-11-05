@@ -1,4 +1,4 @@
-
+let sourceRGB = {r:0, g:0, b:0}
 const draw = ()=>{
   
     let sourceCanvas = document.getElementById("sourceCanvas");
@@ -25,6 +25,8 @@ const draw = ()=>{
     let invertImageData= ctxsource.getImageData(0,0,sourceCanvas.width, sourceCanvas.height);
     let grayImageData= ctxsource.getImageData(0,0,sourceCanvas.width, sourceCanvas.height);
     let thresholdImageData= ctxsource.getImageData(0,0,sourceCanvas.width, sourceCanvas.height);
+    
+
 
     for (let i = 0; i < invertImageData.data.length; i += 4) {
         
@@ -34,17 +36,24 @@ const draw = ()=>{
       invertImageData.data[i + 3] =255
       }
     for (let i = 0; i < grayImageData.data.length; i += 4){
-      let avg = (grayImageData.data[i]*0.2126 + grayImageData.data[i +1]*0.7152 + grayImageData.data[i +2]*0.0722)
-      grayImageData.data[i] = avg
-      grayImageData.data[i+1] = avg
-      grayImageData.data[i+2] = avg
+      if(grayImageData.data[i+3]!==0){
+        let avg = (grayImageData.data[i]*0.2126 + grayImageData.data[i +1]*0.7152 + grayImageData.data[i +2]*0.0722)
+        grayImageData.data[i] = avg
+        grayImageData.data[i+1] = avg
+        grayImageData.data[i+2] = avg
+      }
+      
     }
     for(let i = 0; i < thresholdImageData.data.length; i += 4){
-      let result = (thresholdImageData.data[i]*0.2126 + thresholdImageData.data[i +1]*0.7152 + thresholdImageData.data[i +2]*0.0722 >=200) ? 255:0//閥值=200
-      thresholdImageData.data[i] = result
-      thresholdImageData.data[i+1] = result
-      thresholdImageData.data[i+2] = result
+      if(thresholdImageData.data[i+3]!==0){
+        let result = (thresholdImageData.data[i]*0.2126 + thresholdImageData.data[i +1]*0.7152 + thresholdImageData.data[i +2]*0.0722 >=200) ? 255:0//閥值=200
+        thresholdImageData.data[i] = result
+        thresholdImageData.data[i+1] = result
+        thresholdImageData.data[i+2] = result
+      }
+      
     }
+    
 
     
 
@@ -62,8 +71,28 @@ const draw = ()=>{
     thresholdImage.src = thresholdCanvas.toDataURL("image/png")
     
     
+  let sourceImageData = ctxsource.getImageData(0,0,sourceCanvas.width, sourceCanvas.height);
+  let sourceCount = 0
+  let blockSize = 5
+  for(let i = 0; i < sourceImageData.data.length; i += 4*blockSize){
+    if(sourceImageData.data[i+3]!==0){
+      sourceCount+=1
+      sourceRGB.r += sourceImageData.data[i]
+      sourceRGB.g += sourceImageData.data[i+1]
+      sourceRGB.b += sourceImageData.data[i+2]
+    }
+    
+  }
+  sourceRGB.r = ~~(sourceRGB.r/sourceCount)
+  sourceRGB.g = ~~(sourceRGB.g/sourceCount)
+  sourceRGB.b = ~~(sourceRGB.b/sourceCount)
+    
+    
+  
+     
+    
     
 }
   
 
-export {draw}
+export {draw, sourceRGB}

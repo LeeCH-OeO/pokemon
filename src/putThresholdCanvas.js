@@ -20,11 +20,14 @@ const getThreshold= ()=>{
         ctxSource.drawImage(img, 0, 0)
         let thresholdImageData= ctxSource.getImageData(0,0,sourceCanvas.width, sourceCanvas.height);
         for(let i = 0; i < thresholdImageData.data.length; i += 4){
-            let result = (thresholdImageData.data[i]*0.2126 + thresholdImageData.data[i +1]*0.7152 + thresholdImageData.data[i +2]*0.0722 >=200) ? 255:0 
-            //先灰階處理 再比對閥值
-            thresholdImageData.data[i] = result
-            thresholdImageData.data[i+1] = result
-            thresholdImageData.data[i+2] = result
+            if(thresholdImageData.data[i+3]!==0){
+                let result = (thresholdImageData.data[i]*0.2126 + thresholdImageData.data[i +1]*0.7152 + thresholdImageData.data[i +2]*0.0722 >=200) ? 255:0 
+                //先灰階處理 再比對閥值
+                thresholdImageData.data[i] = result
+                thresholdImageData.data[i+1] = result
+                thresholdImageData.data[i+2] = result
+            }
+            
         }
         ctxThreshold.putImageData(thresholdImageData, 0, 0);
         imageURL.push(thresholdCanvas.toDataURL("image/png"))        

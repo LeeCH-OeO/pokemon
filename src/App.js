@@ -1,5 +1,5 @@
 import {imageArray} from './image';
-import {draw} from './randomCanvas';
+import {draw, sourceRGB} from './randomCanvas';
 import './App.css'
 import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material'
@@ -106,6 +106,10 @@ const oeo = ()=>{
   setTimeout(()=>document.getElementById("sourceContainer").style.display="", 3000)
   
 }
+const handRandom = ()=>{
+  draw()
+  console.log(sourceRGB)
+}
 
 function App() {
    
@@ -123,7 +127,7 @@ function App() {
           </footer>
       </div>
       <div style={{"display": "flex", "padding":"10px"}}>
-        <Button onClick = {draw} style={{ "margin": "auto"}} variant="outlined" color="error">隨機圖片特效</Button>
+        <Button onClick = {handRandom} style={{ "margin": "auto"}} variant="outlined" color="error">隨機圖片特效</Button>
         <Button onClick = {handleInvert} style={{ "margin": "auto"}} variant="outlined" color="error">全體反轉</Button>
         <Button onClick = {handleGray} style={{ "margin": "auto"}} variant="outlined" color="error">全體灰階</Button>
         <Button onClick = {handThreshold} style={{ "margin": "auto"}} variant="outlined" color="error">全體二值化</Button>
