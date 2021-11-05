@@ -32,11 +32,7 @@ const getInvert = ()=>{
         }
 }
  const putInvertImage = ()=>{
-    
     document.getElementById("invertContainer").style=""
-    document.getElementById("sourceContainer").style.display="none"
-    document.getElementById("grayContainer").style.display="none"
-    document.getElementById("thresholdContainer").style.display="none"
     let startTime = Date.now()
     console.time("反轉顏色計時")
     getInvert()

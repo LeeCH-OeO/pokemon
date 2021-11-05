@@ -1,5 +1,5 @@
 import {imageArray} from './image';
-import {draw, sourceRGB} from './randomCanvas';
+import {draw} from './randomCanvas';
 import './App.css'
 import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material'
@@ -10,6 +10,13 @@ import putInvertImage from './invertCanvas';
 import {putGrayImage} from './grayCanvas';
 import putThresholdImage from './putThresholdCanvas';
 import Swal from 'sweetalert2'
+import { GetBlue} from './getBlue';
+import blueArray from './createBlue';
+import redArray from './createRed';
+import { GetRed } from './getRed';
+import { GetGreen } from './getGreen';
+import greenArray from './createGreen';
+
 const putSource = ()=>{
   document.getElementById("status").innerHTML=""
   document.getElementById("invertContainer").style.display="none"
@@ -17,6 +24,9 @@ const putSource = ()=>{
   document.getElementById("thresholdContainer").style.display="none"
   document.getElementById("processedImageContainer").style.display="none"
   document.getElementById("sourceContainer").style.display=""
+  document.getElementById("blueContainer").style.display="none"
+  document.getElementById("greenContainer").style.display="none"
+  document.getElementById("redContainer").style.display="none"
 }
 const handleGray = ()=>{
   Swal.fire({
@@ -38,6 +48,9 @@ const handleGray = ()=>{
       document.getElementById("invertContainer").style.display="none"
       document.getElementById("thresholdContainer").style.display="none"
       document.getElementById("sourceContainer").style.display="none"
+      document.getElementById("blueContainer").style.display="none"
+      document.getElementById("greenContainer").style.display="none"
+      document.getElementById("redContainer").style.display="none"
       setTimeout(()=>putGrayImage(), 500)
     }
   })
@@ -63,6 +76,9 @@ const handleInvert = ()=>{
       document.getElementById("grayContainer").style.display="none"
       document.getElementById("thresholdContainer").style.display="none"
       document.getElementById("sourceContainer").style.display="none"
+      document.getElementById("blueContainer").style.display="none"
+      document.getElementById("redContainer").style.display="none"
+      document.getElementById("greenContainer").style.display="none"
       setTimeout(()=>putInvertImage(), 500)
     }
   })
@@ -87,28 +103,108 @@ const handThreshold = ()=>{
       document.getElementById("invertContainer").style.display="none"
       document.getElementById("grayContainer").style.display="none"
       document.getElementById("sourceContainer").style.display="none"
+      document.getElementById("blueContainer").style.display="none"
+      document.getElementById("redContainer").style.display="none"
+      document.getElementById("greenContainer").style.display="none"
       setTimeout(()=>putThresholdImage(), 500)
     }
   })
 }
-const oeo = ()=>{
-  document.getElementById("loading").style.display="flex"
-  document.getElementById("loadingText").style.display="flex"
-  document.getElementById("status").style.display="none"
-  document.getElementById("processedImageContainer").style.display="none"
-  document.getElementById("invertContainer").style.display="none"
-  document.getElementById("grayContainer").style.display="none"
-  document.getElementById("sourceContainer").style.display="none"
-  document.getElementById("thresholdContainer").style.display="none"
-  setTimeout(()=>document.getElementById("loading").style.display="none", 2900)
-  setTimeout(()=>document.getElementById("loadingText").style.display="none", 2900)
-  setTimeout(()=>window.open("https://youtu.be/d-lEahV5Q_o"), 3000)
-  setTimeout(()=>document.getElementById("sourceContainer").style.display="", 3000)
-  
-}
+
 const handRandom = ()=>{
   draw()
-  console.log(sourceRGB)
+  document.getElementById("status").innerHTML=""
+  document.getElementById("invertContainer").style.display="none"
+  document.getElementById("grayContainer").style.display="none"
+  document.getElementById("thresholdContainer").style.display="none"
+  document.getElementById("processedImageContainer").style.display=""
+  document.getElementById("blueContainer").style.display="none"
+  document.getElementById("greenContainer").style.display="none"
+  document.getElementById("redContainer").style.display="none"
+  document.getElementById("sourceContainer").style.display="none"
+
+}
+const handleBlue = ()=>{
+  Swal.fire({
+    text: "顯示最藍的10隻寶可夢",
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: '開始',
+    cancelButtonText: '取消',
+    background:'#121212'
+    
+  }).then((result) =>{
+    if (result.isConfirmed){
+      document.getElementById("loading").style.display="flex"
+      document.getElementById("loadingText").style.display="flex"
+      document.getElementById("status").style.display="none"
+      document.getElementById("processedImageContainer").style.display="none"
+      document.getElementById("invertContainer").style.display="none"
+      document.getElementById("grayContainer").style.display="none"
+      document.getElementById("sourceContainer").style.display="none"
+      document.getElementById("thresholdContainer").style.display="none"
+      document.getElementById("redContainer").style.display="none"
+      document.getElementById("greenContainer").style.display="none"
+      setTimeout(()=>GetBlue(), 500)
+    }
+  })
+}
+const handleRed = ()=>{
+  Swal.fire({
+    text: "顯示最紅的10隻寶可夢",
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: '開始',
+    cancelButtonText: '取消',
+    background:'#121212'
+    
+  }).then((result) =>{
+    if (result.isConfirmed){
+      document.getElementById("loading").style.display="flex"
+      document.getElementById("loadingText").style.display="flex"
+      document.getElementById("status").style.display="none"
+      document.getElementById("processedImageContainer").style.display="none"
+      document.getElementById("invertContainer").style.display="none"
+      document.getElementById("grayContainer").style.display="none"
+      document.getElementById("sourceContainer").style.display="none"
+      document.getElementById("thresholdContainer").style.display="none"
+      document.getElementById("blueContainer").style.display="none"
+      document.getElementById("greenContainer").style.display="none"
+      setTimeout(()=>GetRed(), 500)
+    }
+  })
+}
+
+const handleGreen = ()=>{
+  Swal.fire({
+    text: "顯示最綠的10隻寶可夢",
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: '開始',
+    cancelButtonText: '取消',
+    background:'#121212'
+    
+  }).then((result) =>{
+    if (result.isConfirmed){
+      document.getElementById("loading").style.display="flex"
+      document.getElementById("loadingText").style.display="flex"
+      document.getElementById("status").style.display="none"
+      document.getElementById("processedImageContainer").style.display="none"
+      document.getElementById("invertContainer").style.display="none"
+      document.getElementById("grayContainer").style.display="none"
+      document.getElementById("sourceContainer").style.display="none"
+      document.getElementById("thresholdContainer").style.display="none"
+      document.getElementById("blueContainer").style.display="none"
+      document.getElementById("redContainer").style.display="none"
+      setTimeout(()=>GetGreen(), 500)
+    }
+  })
 }
 
 function App() {
@@ -131,10 +227,13 @@ function App() {
         <Button onClick = {handleInvert} style={{ "margin": "auto"}} variant="outlined" color="error">全體反轉</Button>
         <Button onClick = {handleGray} style={{ "margin": "auto"}} variant="outlined" color="error">全體灰階</Button>
         <Button onClick = {handThreshold} style={{ "margin": "auto"}} variant="outlined" color="error">全體二值化</Button>
-        <Button onClick = {oeo} style={{ "margin": "auto"}} variant="outlined" color="error">🎵🎶🎙️🎼</Button>
-        <Button onClick = {putSource} style={{ "margin": "auto"}} variant="outlined" color="error">關閉特效</Button>
+        <Button onClick = {handleBlue} style={{ "margin": "auto"}} variant="outlined" color="secondary">搜尋藍色</Button>
+        <Button onClick = {handleRed} style={{ "margin": "auto"}} variant="outlined" color="secondary">搜尋紅色</Button>
+        <Button onClick = {handleGreen} style={{ "margin": "auto"}} variant="outlined" color="secondary">搜尋綠色</Button>
+        <Button onClick = {putSource} style={{ "margin": "auto"}} variant="outlined" color="primary">顯示圖鑑</Button>     
 
       </div>
+
       <div id = "loading" style={{"display":"none"}}>
         <div className="lds-hourglass" style={{"margin": "auto"}}></div>
       </div>
@@ -193,6 +292,9 @@ function App() {
       <div id = "thresholdContainer" className = "container" style={{"display":"none"}}>
       {thresholdArray}
       </div>
+      <div id = "blueContainer" className="container" style={{"display":"none"}}>{blueArray}</div>
+      <div id = "greenContainer" className="container" style={{"display":"none"}}>{greenArray}</div>
+      <div id = "redContainer" className="container" style={{"display":"none"}}>{redArray}</div>
       
       
     </div>

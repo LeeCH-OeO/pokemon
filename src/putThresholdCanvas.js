@@ -36,11 +36,7 @@ const getThreshold= ()=>{
     }
 }
  const putThresholdImage = ()=>{
-    document.getElementById("status").innerHTML=""
-    document.getElementById("thresholdContainer").style=""
-    document.getElementById("sourceContainer").style.display="none"
-    document.getElementById("invertContainer").style.display="none"
-    document.getElementById("grayContainer").style.display="none"
+    document.getElementById("thresholdContainer").style=""    
     console.time("二值計時")
     let startTime = Date.now()
     document.getElementById("status").innerHTML="開始二值化處理"

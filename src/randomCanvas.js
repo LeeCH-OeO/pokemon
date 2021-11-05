@@ -1,4 +1,3 @@
-let sourceRGB = {r:0, g:0, b:0}
 const draw = ()=>{
   
     let sourceCanvas = document.getElementById("sourceCanvas");
@@ -69,30 +68,9 @@ const draw = ()=>{
     grayImage.src = grayCanvas.toDataURL("image/png")
     invertImage.src = invertCanavs.toDataURL("image/png")
     thresholdImage.src = thresholdCanvas.toDataURL("image/png")
-    
-    
-  let sourceImageData = ctxsource.getImageData(0,0,sourceCanvas.width, sourceCanvas.height);
-  let sourceCount = 0
-  let blockSize = 5
-  for(let i = 0; i < sourceImageData.data.length; i += 4*blockSize){
-    if(sourceImageData.data[i+3]!==0){
-      sourceCount+=1
-      sourceRGB.r += sourceImageData.data[i]
-      sourceRGB.g += sourceImageData.data[i+1]
-      sourceRGB.b += sourceImageData.data[i+2]
-    }
-    
-  }
-  sourceRGB.r = ~~(sourceRGB.r/sourceCount)
-  sourceRGB.g = ~~(sourceRGB.g/sourceCount)
-  sourceRGB.b = ~~(sourceRGB.b/sourceCount)
-    
-    
   
-     
-    
     
 }
   
 
-export {draw, sourceRGB}
+export {draw}

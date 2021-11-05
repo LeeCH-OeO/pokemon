@@ -35,11 +35,7 @@ function GetGray (){
 }
 
  const putGrayImage = ()=>{
-    document.getElementById("status").innerHTML=""
     document.getElementById("grayContainer").style=""
-    document.getElementById("sourceContainer").style.display="none"
-    document.getElementById("invertContainer").style.display="none"
-    document.getElementById("thresholdContainer").style.display="none"
     console.time("灰階計時")
     let startTime = Date.now()
     GetGray()
