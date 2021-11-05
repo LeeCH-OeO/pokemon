@@ -23,7 +23,7 @@ function GetGreen() {
     }
     let endTime = Date.now()
     document.getElementById("status").style.display=""
-    document.getElementById("status").innerHTML=`耗時${endTime-startTime} ms`
+    document.getElementById("status").innerHTML=`搜尋綠色耗時${endTime-startTime} ms`
     document.getElementById("loading").style.display="none"
     document.getElementById("loadingText").style.display="none"
     document.getElementById("greenContainer").style.display =""
