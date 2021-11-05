@@ -227,9 +227,9 @@ function App() {
         <Button onClick = {handleInvert} style={{ "margin": "auto"}} variant="outlined" color="error">全體反轉</Button>
         <Button onClick = {handleGray} style={{ "margin": "auto"}} variant="outlined" color="error">全體灰階</Button>
         <Button onClick = {handThreshold} style={{ "margin": "auto"}} variant="outlined" color="error">全體二值化</Button>
-        <Button onClick = {handleBlue} style={{ "margin": "auto"}} variant="outlined" color="secondary">搜尋藍色</Button>
         <Button onClick = {handleRed} style={{ "margin": "auto"}} variant="outlined" color="secondary">搜尋紅色</Button>
         <Button onClick = {handleGreen} style={{ "margin": "auto"}} variant="outlined" color="secondary">搜尋綠色</Button>
+        <Button onClick = {handleBlue} style={{ "margin": "auto"}} variant="outlined" color="secondary">搜尋藍色</Button>        
         <Button onClick = {putSource} style={{ "margin": "auto"}} variant="outlined" color="primary">顯示圖鑑</Button>     
 
       </div>

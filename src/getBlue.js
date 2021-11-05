@@ -27,6 +27,7 @@ function GetBlue() {
     document.getElementById("loading").style.display="none"
     document.getElementById("loadingText").style.display="none"
     document.getElementById("blueContainer").style.display =""
+    
 }
 
 export  {GetBlue}
