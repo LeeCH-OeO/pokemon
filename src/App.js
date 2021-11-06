@@ -313,7 +313,7 @@ function App() {
    
   return (
     <div>
-      <Typography className="header" variant="h1" gutterBottom style={{'fontFamily': 'Noto Serif TC','color':'red'}}>
+      <Typography className="header" variant="h1" gutterBottom style={{'fontFamily': 'Noto Serif TC'}}>
       ㊕寶可夢特效圖鑑㊝
       </Typography>
       <div style={{"display": "flex"}}>
