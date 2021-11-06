@@ -386,7 +386,7 @@ function App() {
       
       
       </span>
-      <Typography variant="h4" gutterBottom id = "status" style={{"textAlign": "center", 'fontFamily': 'Noto Serif TC','color':'red'}}></Typography>
+      <Typography variant="h4" gutterBottom id = "status" style={{"textAlign": "center", 'fontFamily': 'Noto Serif TC'}}></Typography>
             
       <div id ="canvas_container" style={{"display":"none"}}>
       <canvas id="sourceCanvas" width="630" height="630"></canvas> 
