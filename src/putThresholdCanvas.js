@@ -16,16 +16,17 @@ const getThreshold= ()=>{
         ctxSource.clearRect(0, 0, sourceCanvas.width, sourceCanvas.height);
         ctxThreshold.clearRect(0, 0, thresholdCanvas.width, thresholdCanvas.height);
         let img = new Image()
-        img.src = process.env.PUBLIC_URL+"/image/"+index+".png"
+        img.src = process.env.PUBLIC_URL+"/image/"+index+".png"//設定來源圖片
         ctxSource.drawImage(img, 0, 0)
-        let thresholdImageData= ctxSource.getImageData(0,0,sourceCanvas.width, sourceCanvas.height);
+        let thresholdImageData= ctxSource.getImageData(0,0,sourceCanvas.width, sourceCanvas.height);//讀取圖片資訊
         for(let i = 0; i < thresholdImageData.data.length; i += 4){
-            if(thresholdImageData.data[i+3]!==0){
+            if(thresholdImageData.data[i+3]!==0){//跳過透明像素
                 let result = (thresholdImageData.data[i]*0.2126 + thresholdImageData.data[i +1]*0.7152 + thresholdImageData.data[i +2]*0.0722 >=200) ? 255:0 
                 //先灰階處理 再比對閥值
                 thresholdImageData.data[i] = result
                 thresholdImageData.data[i+1] = result
                 thresholdImageData.data[i+2] = result
+                //取得二值化結果
             }
             
         }

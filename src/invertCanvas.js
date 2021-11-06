@@ -16,14 +16,15 @@ const getInvert = ()=>{
         ctxSource.clearRect(0, 0, sourceCanvas.width, sourceCanvas.height);
         ctxInvert.clearRect(0, 0, invertCanvas.width, invertCanvas.height);
         let img = new Image()
-        img.src = process.env.PUBLIC_URL+"/image/"+index+".png"
+        img.src = process.env.PUBLIC_URL+"/image/"+index+".png"//設定來源圖片
         ctxSource.drawImage(img, 0, 0)
-        let invertImageData= ctxSource.getImageData(0,0,sourceCanvas.width, sourceCanvas.height);
+        let invertImageData= ctxSource.getImageData(0,0,sourceCanvas.width, sourceCanvas.height);//讀取圖片資訊
         for (let i = 0; i < invertImageData.data.length; i += 4) {
             invertImageData.data[i]     = 255-invertImageData.data[i]
             invertImageData.data[i + 1] = 255-invertImageData.data[i+1]
             invertImageData.data[i + 2] = 255-invertImageData.data[i+2]
             invertImageData.data[i + 3] =255
+            //計算反轉資訊
         }
         ctxInvert.putImageData(invertImageData, 0, 0);
         imageURL.push(invertCanvas.toDataURL("image/png"))        

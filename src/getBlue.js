@@ -8,7 +8,7 @@ function GetBlue() {
         let blueRGB = [0,0,255]
         let diffBlue = {index:0, EuclideanD : 0}
         diffBlue.index = i+1
-        diffBlue.EuclideanD =  averageRGB[i].r+averageRGB[i].g +((averageRGB[i].b-blueRGB[2])**2)**0.5
+        diffBlue.EuclideanD =  ((averageRGB[i].r-blueRGB[0])**2)**0.5 +((averageRGB[i].g-blueRGB[1])**2)**0.5 +((averageRGB[i].b-blueRGB[2])**2)**0.5
         diffBlueArray.push(diffBlue)
         i+=1
     }

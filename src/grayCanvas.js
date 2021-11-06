@@ -15,15 +15,16 @@ function GetGray (){
       ctxSource.clearRect(0, 0, sourceCanvas.width, sourceCanvas.height);
       ctxGray.clearRect(0, 0, grayCanvas.width, grayCanvas.height);
       let img = new Image()
-      img.src = process.env.PUBLIC_URL+"/image/"+index+".png"
+      img.src = process.env.PUBLIC_URL+"/image/"+index+".png"//設定來源圖片
       ctxSource.drawImage(img, 0, 0)
-      let grayImageData= ctxSource.getImageData(0,0,sourceCanvas.width, sourceCanvas.height);
+      let grayImageData= ctxSource.getImageData(0,0,sourceCanvas.width, sourceCanvas.height);//讀取圖片資訊
       for (let i = 0; i < grayImageData.data.length; i += 4){
-        if(grayImageData.data[i+3]!==0){
+        if(grayImageData.data[i+3]!==0){//跳過透明像素
           let avg = (grayImageData.data[i]*0.2126 + grayImageData.data[i +1]*0.7152 + grayImageData.data[i +2]*0.0722)
           grayImageData.data[i] = avg
           grayImageData.data[i+1] = avg
           grayImageData.data[i+2] = avg
+          //計算灰階值
         }
         
       }
