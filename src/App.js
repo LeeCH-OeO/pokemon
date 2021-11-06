@@ -2,7 +2,7 @@ import {imageArray} from './image';
 import {draw} from './randomCanvas';
 import './App.css'
 import Typography from '@mui/material/Typography';
-import { Button, TextField } from '@mui/material'
+import { Button } from '@mui/material'
 import invertArray from './createInvert';
 import grayArray from './createGray';
 import thresholdArray from './createThreshold';
@@ -218,66 +218,13 @@ const handleGreen = ()=>{
 }
 
 function App() {
-  const [searchR, setSearchR] = useState('')
-  const [searchG, setSearchG] = useState('')
-  const [searchB, setSearchB] = useState('')
-  const isNumeric = (value)=> {
-    return /^-?\d+$/.test(value);
+  const [colorPick, setColorPick] = useState('')
+  const  hex2rgb = (hex)=> {
+    return ['0x' + hex[1] + hex[2] | 0, '0x' + hex[3] + hex[4] | 0, '0x' + hex[5] + hex[6] | 0];
   }
+  
   const handleSearch = ()=>{
-    let searchRGB = []
-    if(isNumeric(searchR)){
-      if (parseInt(searchR)<0){
-        searchRGB[0] =   (parseInt(0))
-        
-      }
-      else if(parseInt(searchR)>255){
-        searchRGB[0] = (parseInt(255))
-        
-      }
-      else{
-        searchRGB[0] = (parseInt(searchR))
-        
-      }
-    }
-    else{
-      searchRGB[0] = (parseInt(0))
-    }
-  if(isNumeric(searchG)){
-      if (parseInt(searchG)<0){
-        searchRGB[1] = parseInt(0)
-        
-      }
-      else if(parseInt(searchG)>255){
-        searchRGB[1] = parseInt(255)
-        
-      }
-      else{
-        searchRGB[1] = (parseInt(searchG))
-        
-      }
-  }
-  else{
-    searchRGB[1] = (parseInt(0))
-  }
-
-  if(isNumeric(searchB)){
-      if (parseInt(searchB)<0){
-        searchRGB[2] = (parseInt(0))
-        
-      }
-      else if(parseInt(searchB)>255){
-        searchRGB[2] = (parseInt(255))
-        
-      }
-      else{
-        searchRGB[2] = (parseInt(searchB))
-        
-      }
-  }
-  else{
-    searchRGB[2] = (parseInt(0))
-  }
+  
   Swal.fire({
     text: "搜尋顏色最接近的10隻寶可夢",
     icon: 'question',
@@ -290,9 +237,6 @@ function App() {
     
   }).then((result) =>{
     if (result.isConfirmed){
-      setSearchR('')
-      setSearchG('')
-      setSearchB('')
       document.getElementById("loading").style.display="flex"
       document.getElementById("loadingText").style.display="flex"
       document.getElementById("status").style.display="none"
@@ -304,7 +248,7 @@ function App() {
       document.getElementById("blueContainer").style.display="none"
       document.getElementById("redContainer").style.display="none"
       document.getElementById("greenContainer").style.display="none"
-      setTimeout(()=>GetSearch(searchRGB), 500)
+      setTimeout(()=>GetSearch(hex2rgb(colorPick)), 500)
       
     }
   })
@@ -337,15 +281,14 @@ function App() {
         <Button onClick = {handleRed} style={{ "margin": "auto"}} variant="outlined" color="secondary">搜尋紅色</Button>
         <Button onClick = {handleGreen} style={{ "margin": "auto"}} variant="outlined" color="secondary">搜尋綠色</Button>
         <Button onClick = {handleBlue} style={{ "margin": "auto"}} variant="outlined" color="secondary">搜尋藍色</Button>
-        <TextField  id="filled-basic" label="R值" variant="outlined"    value={searchR} onChange={(e)=>setSearchR(e.target.value)}
-        />
-      <TextField  id="filled-basic" label="G值" variant="outlined"    value={searchG} onChange={(e)=>setSearchG(e.target.value)}
-        />
-      <TextField  id="filled-basic" label="B值" variant="outlined"   value={searchB} onChange={(e)=>setSearchB(e.target.value)}
-        />
+        <div className="colorSearch">
+          <input type="color"  value={colorPick} onChange={(e)=>setColorPick(e.target.value)}/>
         <Button onClick = {handleSearch} style={{ "margin": "auto"}} variant="outlined" >搜尋RGB值</Button>
         </div>
+        
+        </div>
       </div>
+      
       
       
 

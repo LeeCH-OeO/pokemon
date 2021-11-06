@@ -13,6 +13,10 @@
     border-radius: 10px;
     max-width: 100%;
 }
+.colorSearch{
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
 .processedImageContainer{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
