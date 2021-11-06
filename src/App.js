@@ -343,7 +343,7 @@ function App() {
         />
       <TextField  id="filled-basic" label="B值" variant="outlined"   value={searchB} onChange={(e)=>setSearchB(e.target.value)}
         />
-        <Button onClick = {handleSearch} style={{ "margin": "auto"}} variant="outlined" >搜尋</Button>
+        <Button onClick = {handleSearch} style={{ "margin": "auto"}} variant="outlined" >搜尋RGB值</Button>
         </div>
       </div>
       
