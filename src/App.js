@@ -216,7 +216,16 @@ const handleGreen = ()=>{
     }
   })
 }
-
+const getWhite = ()=>{
+  let body = document.querySelector('body')
+  body.style.backgroundColor='white'
+  body.style.color='black'
+}
+const getDark = ()=>{
+  let body = document.querySelector('body')
+  body.style.backgroundColor='#121212'
+  body.style.color='white'
+}
 function App() {
   const [colorPick, setColorPick] = useState('')
   const  hex2rgb = (hex)=> {
@@ -254,12 +263,14 @@ function App() {
   })
   
   }
-   
+  
   return (
-    <div>
-      <Typography className="header" variant="h1" gutterBottom style={{'fontFamily': 'Noto Serif TC'}}>
+    <div id = "mainPage">
+      <Typography className="header" variant="h1" gutterBottom style={{'fontFamily': 'Noto Serif TC', 'color':'red'}}>
       ㊕寶可夢特效圖鑑㊝
       </Typography>
+      <Button onClick = {getWhite} style={{ "margin": "auto"}} variant="outlined" color="error">白</Button>
+      <Button onClick = {getDark} style={{ "margin": "auto"}} variant="outlined" color="error">黑</Button>
       <div style={{"display": "flex"}}>
           <footer style={{ "margin": "auto"}}>
             <a href="https://github.com/LeeCH-OeO/pokemon" target="_blank" rel="noreferrer">
@@ -275,6 +286,7 @@ function App() {
         <Button onClick = {handleGray} style={{ "margin": "auto"}} variant="outlined" color="error">全體灰階</Button>
         <Button onClick = {handThreshold} style={{ "margin": "auto"}} variant="outlined" color="error">全體二值化</Button>          
         <Button onClick = {putSource} style={{ "margin": "auto"}} variant="outlined" color="error">顯示圖鑑</Button>
+        
       </div>
       <div>
         <div style={{"display": "flex", "padding":"1px"}}>

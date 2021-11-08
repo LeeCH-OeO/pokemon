@@ -33,6 +33,7 @@
 }
 .header{
     text-align: center;
+    isolation: isolate;
 }
 .describe{
     text-align: center;
