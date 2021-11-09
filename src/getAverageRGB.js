@@ -25,7 +25,7 @@ function getAverageRGB(){
     sourceRGB.g = ~~(sourceRGB.g/sourceCount)
     sourceRGB.b = ~~(sourceRGB.b/sourceCount)//取得圖片的平均RGB值
     averageRGB.push(sourceRGB)
-    console.log(`已計算${(index/520)*100}`)
+    console.log(`已計算${(index/520)*100}%`)
     index+=1
     }
 }
