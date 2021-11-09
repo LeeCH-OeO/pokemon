@@ -1,4 +1,4 @@
-# [👉🏿酷酷的寶可夢特效圖鑑👈🏿](https://leech-oeo.github.io/pokemon/)
+# [👉🏿寶可夢搜尋系統👈🏿](https://leech-oeo.github.io/pokemon/)
 
 ## Getting Started with Create React App
 
