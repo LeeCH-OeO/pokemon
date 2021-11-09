@@ -267,7 +267,7 @@ function App() {
   return (
     <div id = "mainPage">
       <Typography className="header" variant="h1" gutterBottom style={{'fontFamily': 'Noto Serif TC', 'color':'red'}}>
-      ㊕寶可夢特效圖鑑㊝
+      ㊕寶可夢搜尋系統㊝
       </Typography>
       <Button onClick = {getWhite} style={{ "margin": "auto"}} variant="outlined" color="error">白</Button>
       <Button onClick = {getDark} style={{ "margin": "auto"}} variant="outlined" color="error">黑</Button>
@@ -280,7 +280,7 @@ function App() {
           </footer>
       </div>
 
-      <div style={{"display": "flex", "padding":"10px"}}>
+      <div style={{"display": "none", "padding":"10px"}}>
         <Button onClick = {handRandom} style={{ "margin": "auto"}} variant="outlined" color="error">隨機圖片特效</Button>
         <Button onClick = {handleInvert} style={{ "margin": "auto"}} variant="outlined" color="error">全體反轉</Button>
         <Button onClick = {handleGray} style={{ "margin": "auto"}} variant="outlined" color="error">全體灰階</Button>
