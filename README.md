@@ -1,4 +1,4 @@
-# [👉🏿寶可夢搜尋系統👈🏿](https://leech-oeo.github.io/pokemon/)
+# [👉🏿寶可夢搜尋系統👈🏿](https://pokemon.leech-oeo.dev/)
 
 ## Getting Started with Create React App
 
