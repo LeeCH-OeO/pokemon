@@ -264,7 +264,10 @@ function App() {
         className="header"
         variant="h1"
         gutterBottom
-        style={{ fontFamily: "Noto Serif TC", color: "red" }}
+        style={{
+          fontFamily: "Noto Serif TC",
+          color: "red",
+        }}
       >
         ㊕寶可夢搜尋系統㊝
       </Typography>
@@ -290,11 +293,15 @@ function App() {
             href="https://github.com/LeeCH-OeO/pokemon"
             target="_blank"
             rel="noreferrer"
+            style={{ textDecoration: "none", opacity: "0.5" }}
           >
             <Typography
               align="center"
               gutterBottom
-              style={{ fontFamily: "Noto Serif TC", color: "red" }}
+              style={{
+                fontFamily: "Noto Serif TC",
+                color: "red",
+              }}
             >
               ©LeeCH-OeO
             </Typography>
