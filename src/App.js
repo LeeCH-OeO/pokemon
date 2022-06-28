@@ -44,9 +44,9 @@ const handleGray = () => {
     background: "#121212",
   }).then((result) => {
     if (result.isConfirmed) {
-      document.getElementById("loading").style.display = "flex";
-      document.getElementById("loadingText").style.display = "flex";
-      document.getElementById("status").style.display = "none";
+      document.getElementById("loading").style.display = "flex"
+      document.getElementById("loadingText").style.display = "flex"
+      document.getElementById("status").style.display = "none"
       document.getElementById("processedImageContainer").style.display = "none";
       document.getElementById("invertContainer").style.display = "none";
       document.getElementById("thresholdContainer").style.display = "none";
