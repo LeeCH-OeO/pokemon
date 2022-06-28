@@ -1,8 +1,6 @@
 # [👉🏿 寶可夢搜尋系統 👈🏿](https://pokemons.chihsuan-lee.dev/)
 
-## Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
