@@ -1,6 +1,5 @@
 import Swal from "sweetalert2";
-let peekTotalJSHeapSize = 0;
-let peekUsedJSHeapSize = 0;
+
 
 let imageURL = [];
 let index = 1;
@@ -41,15 +40,8 @@ function GetGray() {
     ctxGray.putImageData(grayImageData, 0, 0);
     imageURL.push(grayCanvas.toDataURL("image/png"));
     console.log(`第${index}張圖片已轉換`);
-    console.log(
-      `total allocated heap size: ${window.performance.memory.totalJSHeapSize},currently active segment of JS heap: ${window.performance.memory.usedJSHeapSize}`
-    );
-    if (peekTotalJSHeapSize < window.performance.memory.totalJSHeapSize) {
-      peekTotalJSHeapSize = window.performance.memory.totalJSHeapSize;
-    }
-    if (peekUsedJSHeapSize < window.performance.memory.usedJSHeapSize) {
-      peekUsedJSHeapSize = window.performance.memory.usedJSHeapSize;
-    }
+
+
     index += 1;
   }
 }
@@ -64,27 +56,15 @@ const putGrayImage = () => {
     let tempImageID = document.getElementById("grayimg-" + count);
     tempImageID.src = imageURL[count - 1];
     console.log(`第${count}張圖片已載入`);
-    if (peekTotalJSHeapSize < window.performance.memory.totalJSHeapSize) {
-      peekTotalJSHeapSize = window.performance.memory.totalJSHeapSize;
-    }
-    if (peekUsedJSHeapSize < window.performance.memory.usedJSHeapSize) {
-      peekUsedJSHeapSize = window.performance.memory.usedJSHeapSize;
-    }
-    console.log(
-      `total allocated heap size: ${window.performance.memory.totalJSHeapSize},currently active segment of JS heap: ${window.performance.memory.usedJSHeapSize}`
-    );
+
 
     count += 1;
   }
   console.timeEnd("灰階計時");
-  console.log(
-    `peek allocated heap size: ${peekTotalJSHeapSize},peek currently active segment of JS heap: ${peekUsedJSHeapSize}`
-  );
+
   let endTime = Date.now();
   document.getElementById("status").style.display = "";
-  document.getElementById("status").innerHTML = `520張灰階處理耗時${
-    endTime - startTime
-  } ms, 平均耗時${(endTime - startTime) / 520} ms`;
+  document.getElementById("status").innerHTML = `520張灰階處理耗時${endTime - startTime} ms, 平均耗時${(endTime - startTime) / 520} ms`
   Swal.fire({
     icon: "success",
     title: "灰階轉換完成!",
