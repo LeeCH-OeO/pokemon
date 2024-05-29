@@ -1,5 +1,3 @@
-# [👉🏿 寶可夢搜尋系統 👈🏿](https://pokemons.chihsuan-lee.dev/)
-
 
 
 ## Available Scripts
